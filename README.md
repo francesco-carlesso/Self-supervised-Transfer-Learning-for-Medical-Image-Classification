@@ -6,7 +6,7 @@ Our results show that BEiT achieves **strong generalization** on medical imaging
 
 ---
 
-## 🚀 Approach
+## 📌 Approach
 - Fine-tuning **BEiT** on medical datasets.
 - Comparison against supervised baselines (ResNet-18, ResNet-50, AutoML frameworks).
 - Evaluation with standard metrics (**AUC**, **Accuracy**).
@@ -32,7 +32,7 @@ Full experimental details are in the [report](./docs/Report.pdf).
 
 ---
 
-## 📌 Roadmap / Future Work
+## 🧭 Roadmap / Future Work
 - Extend to more MedMNIST datasets.  
 - Explore hybrid approaches (predictive + contrastive SSL).  
 - Add interpretability tools (e.g., Grad-CAM, attention map visualizations).  
