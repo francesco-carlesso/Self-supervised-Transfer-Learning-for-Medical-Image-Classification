@@ -28,10 +28,11 @@ Both are preprocessed via Hugging Face to fit BEiT’s input requirements.
 - **BreastMNIST**: BEiT outperformed ResNet and AutoML baselines, achieving AUC ≈ 0.91.  
 - **PneumoniaMNIST**: BEiT achieved AUC ≈ 0.98, close to Google AutoML Vision.  
 
-<p float="left">
-  <img src="docs/BreastMNIST_ROC.png" width="45%" />
-  <img src="docs/BreastMNIST_ROC.png" width="45%" /> 
+<p align="center">
+  <img src="docs/BreastMNIST_ROC.png" width="49%" />
+  <img src="docs/PneumoniaMNIST_ROC.png" width="49%" />
 </p>
+
 
 Full experimental details are in the [report](./docs/Report.pdf).
 
