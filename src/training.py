@@ -1,3 +1,5 @@
+import os
+import shutil
 import random
 import gc
 import torch
@@ -77,6 +79,7 @@ def Training(dataset, model_path, output_dir, batch_size, weight_decay, freezer)
         args=training_args,
         train_dataset=dataset["train"],
         eval_dataset=dataset["validation"],
+        processing_class=processor,
         compute_metrics=compute_metrics,
     )
 
@@ -84,6 +87,11 @@ def Training(dataset, model_path, output_dir, batch_size, weight_decay, freezer)
 
     model.save_pretrained(output_dir)
     processor.save_pretrained(output_dir)
+
+    for item in os.listdir(output_dir):
+        item_path = os.path.join(output_dir, item)
+        if os.path.isdir(item_path) and item.startswith("checkpoint-"):
+            shutil.rmtree(item_path)
 
     del model
     del trainer
@@ -105,14 +113,14 @@ model_checkpoint = "microsoft/beit-large-patch16-224-pt22k"
 
 for conf in configs:
     name = f"{conf['class'].__name__}_{conf['size']}_{'balanced' if conf['balanced'] else ''}"
-    print(f"\n# {'='*20}\n# EXPERIMENT: {name}\n# {'='*20}")
+    print(f"\n# {'='*40}\n# EXPERIMENT: {name}\n# {'='*40}")
     
     current_data = load_dataset(conf['class'], conf['size'], conf['balanced'], conf['alpha'])
     
     Training(
         dataset=current_data,
         model_path=model_checkpoint,
-        output_dir=f"./{name}",
+        output_dir=f"models/{name}",
         batch_size=32,
         weight_decay=0.1,
         freezer=beit_freezer
