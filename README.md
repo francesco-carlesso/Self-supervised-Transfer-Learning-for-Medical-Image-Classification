@@ -51,7 +51,7 @@ Full experimental details are in the [report](./docs/Report.pdf).
 
 ---
 
-## 🚀 Deployment & API Usage
+## 🐳 Deployment & API Usage
 
 To ensure reliable and isolated execution, the inference API is containerized using **Docker**. The backend is built with **FastAPI**, which handles incoming image requests, routes it to the appropriate fine-tuned models, and returns the classification results.
 
