@@ -53,12 +53,12 @@ Full experimental details are in the [report](./docs/Report.pdf).
 
 ## 🚀 Deployment & API Usage
 
-To ensure reliable and isolated execution, the inference API is containerized using **Docker**. The backend is built with **FastAPI**, which handles incoming image requests, routes them to the appropriate pre-trained PyTorch model, and returns the classification results. 
+To ensure reliable and isolated execution, the inference API is containerized using **Docker**. The backend is built with **FastAPI**, which handles incoming image requests, routes it to the appropriate fine-tuned models, and returns the classification results.
 
 The provided `Dockerfile` is optimized for CPU inference to ensure maximum compatibility out-of-the-box.
 
 ### 1. Build the Docker Image
-Before building the image, ensure that your trained models are saved locally in the `models/` directory as expected by the Dockerfile.
+Before building the image, execute `src/training.py` and ensure that the trained models are saved locally in the `models/` directory as expected by the Dockerfile.
 
 To build the Docker image, run the following command in the root of the repository:
 
