@@ -102,4 +102,4 @@ The API processes the image and returns the predicted class, the model's confide
 }
 ```
 
-> **Note:** To stop and remove the container later, run `docker stop medmnist-container && docker rm medmnist-container`
+> To stop and remove the container later, run `docker stop medmnist-container && docker rm medmnist-container`
